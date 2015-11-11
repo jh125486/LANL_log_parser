@@ -1,0 +1,15 @@
+- model_class = Node
+- model_names = (0..2).collect {|i| model_class.model_name.human(count: i).downcase }
+.page-header
+  %h1
+    =t '.title', default: model_class.model_name.human.pluralize.titleize
+    = new_crud_btn(model_class)
+
+%table.table.table-striped{ data: { source: url_for([model_class, format: 'datatable']), resourcenames: model_names } }
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:created_at)
+      %th= model_class.human_attribute_name(:updated_at)
+      %th.actions{ data: { orderable: 'false' } }=t '.actions', default: t("helpers.actions")
+  %tbody

@@ -1,0 +1,13 @@
+en:
+  language: English
+  activerecord:
+    model:
+      node:
+        one: Node
+        other: Nodes
+      log_line:
+        one: Log line
+        other: Log lines
+    attributes:
+      log_line:
+        number: Line number

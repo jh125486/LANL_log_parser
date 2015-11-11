@@ -1,0 +1,8 @@
+= bootstrap_form_for @node do |f|
+  = f.alert_message t 'errors.template.body'
+
+  = f.static_control :name
+
+  = f.form_group do
+    = f.primary
+    = cancel_link

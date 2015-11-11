@@ -1,0 +1,34 @@
+- model_class = LogLine
+%div.page-header
+  %h1
+    = t '.title', default: @node.class.model_name.human.titleize
+    "#{@node.name}"
+  %h2
+    = t '.title', default: model_class.model_name.human.titleize
+    .pull-right
+      = action_btns [@node, @log_line]
+
+%fieldset.tabs
+  %ul.nav.nav-tabs{ role: 'tablist' }
+    %li{ role: 'presentation', class: 'active'}
+      = link_to '#info', role: 'tab', data: { toggle: 'tab' }, aria: { controls: 'info'} do
+        Info
+    %li{ role: 'presentation'}
+      = link_to '#error', role: 'tab', data: { toggle: 'tab' }, aria: { controls: 'error'} do
+        Error
+
+  .tab-content
+    .tab-pane.fade.in.active#info{role: 'tabpanel'}
+      %dl
+        = label_with_value model_class.human_attribute_name(:node), nice_link_to(@log_line.node)
+        = label_with_value model_class.human_attribute_name(:number), @log_line.number
+        = label_with_value model_class.human_attribute_name(:message), @log_line.message
+        - if @log_line.process
+          = label_with_value model_class.human_attribute_name(:process), @log_line.process
+          - if @log_line.pid
+            = label_with_value model_class.human_attribute_name(:pid), @log_line.pid
+        = label_with_value model_class.human_attribute_name(:timestamp), @log_line.timestamp
+    .tab-pane.fade#error{role: 'tabpanel'}
+      %dl
+        = label_with_value model_class.human_attribute_name(:comment), simple_format(@log_line.comment)
+        = label_with_value model_class.human_attribute_name(:priority), @log_line.priority

@@ -1,0 +1,13 @@
+%footer
+  .fluid-container
+    .row.text-muted.text-center
+      .col-md-3.col-sm-3#time
+      .col-md-6.col-sm-6
+      .col-md-3.col-sm-3
+        %span.text-right &copy; UNT DCS Lab #{Time.zone.now.year}
+
+:coffee
+  updateTime = ->
+    $('#time').text 'Time: ' + moment().format('HH:mm')
+  setInterval updateTime, 3000
+  updateTime()

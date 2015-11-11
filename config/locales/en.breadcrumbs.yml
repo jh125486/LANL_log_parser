@@ -1,0 +1,10 @@
+en:
+  breadcrumbs:
+    nodes:
+      index: Nodes
+      show: View
+      edit: Edit
+    log_lines:
+      index: Log Lines
+      show: View
+      edit: Edit

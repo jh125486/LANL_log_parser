@@ -1,0 +1,376 @@
+body
+  margin-bottom: 70px
+  padding-top: 70px
+
+.no-padding
+  padding: 0 !important
+
+.pinpad
+  margin-bottom: 1.5em
+  input[type="password"]
+    width: 2.5em
+    height: 2.5em
+    text-align: center
+    font-size: 2.5em
+
+body > footer
+  border-top: 1px solid #bbb
+  background: #ddd
+  position: fixed
+  bottom: 0
+  width: 100%
+  z-index: 100
+
+.no-gutter[class*="col-"]
+  padding-left: 0
+  padding-right: 0
+
+.phonepad
+  #phone_number_formatted
+    border: none
+  button, #phone_number_formatted, input[type="submit"]
+    font-size: 4em
+    padding: 0
+    width: 100%
+  button
+    border-radius: 1em
+    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace
+    .glyphicon
+      vertical-align: middle
+  button.top
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+    &.left
+      border-top-right-radius: 0
+    &.right
+      border-top-left-radius: 0
+  button.middle
+    border-radius: 0
+  button.bottom
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    &.left
+      border-bottom-right-radius: 0
+    &.right
+      border-bottom-left-radius: 0
+  .actions
+    margin-top: 2.5em
+
+.panel-heading
+  cursor: pointer
+.accordion-toggle:after
+  font-family: 'Glyphicons Halflings'
+  content: "\e259"
+  float: right
+  color: inherit
+.panel-heading.collapsed .accordion-toggle:after
+  content: "\e257"
+#accordion.panel-group .panel+.panel
+  margin-top: 0
+  border-top: 0
+
+.tab-content > .active
+  margin-top: 2em
+
+.thumbnail img
+  min-height: 192px
+  height: 192px
+
+label.required:after
+  content: " *"
+  color: #ff0000
+
+.dataTables-toolbar
+  padding: 0.5em
+  background: #ddd
+  input
+    margin-left: 0
+
+.glyphicon.active
+  -webkit-animation: spin 2s infinite linear
+  -moz-animation: spin 2s infinite linear
+  -o-animation: spin 2s infinite linear
+  animation: spin 2s infinite linear
+@-webkit-keyframes spin
+  0%
+    -webkit-transform: rotate(0deg)
+  100%
+    -webkit-transform: rotate(359deg)
+@-moz-keyframes spin
+  0%
+    -moz-transform: rotate(0deg)
+  100%
+    -moz-transform: rotate(359deg)
+@-o-keyframes spin
+  0%
+    -o-transform: rotate(0deg)
+  100%
+    -o-transform: rotate(359deg)
+@keyframes spin
+  0%
+    -moz-transform: rotate(0deg)
+    -webkit-transform: rotate(0deg)
+  100%
+    -moz-transform: rotate(359deg)
+    -webkit-transform: rotate(359deg)
+
+td
+  .btn-group.actions
+    width: 7.25em
+
+#about-btn
+  padding: 0.25em 1em
+
+//.pull-left .fa, .pull-right .fa
+//  margin-right: 0.75em
+
+.navbar
+  border-radius: 0
+
+.navbar-brand
+  padding: 5px 15px
+
+.navbar .progress
+  margin-top: $navbar-margin-bottom * 0.75
+  bottom: $navbar-margin-bottom * 0.75
+
+.navbar-right
+  margin-right: 8px
+
+.btn-xl
+  @include button-size($padding-large-vertical * 2, $padding-large-horizontal * 2, $font-size-large * 2, $line-height-large * 2, $btn-border-radius-large * 2)
+
+.btn-xxl
+  @include button-size($padding-large-vertical * 3, $padding-large-horizontal * 3, $font-size-large * 3, $line-height-large * 2, $btn-border-radius-large * 3)
+
+#choose
+  .col-md-6
+    padding: 0.5em
+    &:first-child
+      border-right: 2px solid $table-border-color
+
+.food-order
+  border-top: 1px solid $table-border-color
+  margin-top: 3px
+  &:first-child
+    border-top: none
+    margin-top: 0px
+
+.inventory
+  input
+    width: 4em
+
+td > .btn-group
+  margin: -6px
+
+.panel-heading .btn
+  margin: -8px -12px 0 0
+
+.seating
+  .list-group-item
+    padding: 6px
+    .label
+      float: right
+
+.nav-pills > li > a > .badge
+  float: right
+
+.dropdown-menu
+  .list-group
+    margin-bottom: 0
+
+.btn
+  .glyphicon.pull-right, .glyphicon.pull-right
+    margin-top: 2px
+
+.btn-lg
+  .glyphicon
+    top: 2px
+
+.phonepad .btn-lg
+  .glyphicon
+    top: -4px
+
+.form-group
+  fieldset
+    padding: 1em 0 0 1em
+    margin-bottom: 0.5em
+    .help-block
+      margin-bottom: 0
+th
+  .help-block
+    margin-bottom: 0
+
+#log-in-page
+  ol.carousel-indicators
+    display: none
+
+td
+  p:last-child
+    margin: 0
+
+.form-inline
+  td
+    .form-group
+      display: inline
+    .form-control
+      width: 100%
+
+table
+  th, td
+    > .btn, > .btn-group
+      margin: -6px 0px
+
+.navbar-fixed-bottom.navbar-default, .navbar-static-bottom.navbar-default, .navbar-bottom
+  @include gradient-vertical($start-color: darken($navbar-default-bg, 17), $end-color: lighten($navbar-default-bg, 10%))
+  @include reset-filter // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered
+  $shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.075)
+  @include box-shadow($shadow)
+  border-color: darken($navbar-default-bg, 22%)
+  .navbar-nav > .open > a,  .navbar-nav > .active > a
+    @include gradient-vertical($start-color: darken($navbar-default-link-active-bg, 2%), $end-color: darken($navbar-default-link-active-bg, 5%))
+    @include box-shadow(inset 0 3px 9px rgba(0,0,0,.075))
+
+
+.navbar .navbar-text.two-line
+  margin: 5px 0 4px 15px
+  text-align: center
+  border-right: 1px solid $gray-light
+  padding-right: 1em
+  &:last-child
+    border-right: none
+  hr
+    margin: 0
+.navbar hr
+  border-color: $gray-light
+
+#help
+  padding: 3px 11px 4px 11px
+
+#bill
+  .panel-body
+    @include gradient-vertical($start-color: $panel-bg, $end-color: darken($panel-bg, 9))
+    @include reset-filter // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered
+
+.food
+  .panel
+    border-bottom-left-radius: 28px
+    border-bottom-right-radius: 28px
+  .panel-body
+    padding: 0.5em
+    @include gradient-vertical($start-color: #fff, $end-color: lighten($brand-primary, 8%))
+    @include reset-filter // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered
+  .btn.btn-block
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    border-bottom-left-radius: 28px
+    border-bottom-right-radius: 28px
+  .food-info
+    margin-top: 0.25em
+
+.messages
+  .message
+    margin: 0.5em 0
+  .popover
+    max-width: 72%
+    display: inline-block
+    position: relative
+    margin: 0 1em
+    z-index: 2
+    .arrow
+      top: initial
+      bottom: 0.75em
+  .from
+    text-align: right
+    .popover
+      background: $brand-info
+    .popover.left .arrow:after
+      border-left-color: $brand-info
+
+  .sender
+    display: inline-block
+    vertical-align: bottom
+  .sent
+    font-size: 0.75em
+    color: $gray-light
+    margin: 0 3em 1em 3em
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after
+  top: inherit
+  bottom: 8px
+
+.popover#messages-popover
+  left: 1em
+  max-width: 50%
+  padding: 0
+.well.messages
+  overflow-y: auto
+  padding: 0 1em
+  margin-bottom: 0
+#messages-btn
+  cursor: pointer
+
+#flash-message
+  left: 0
+  right: 0
+  position: absolute
+  z-index: 1000
+
+.none
+  color: lighten($gray-base, 87%)
+  text-shadow: 0px -2px 0 lighten($gray-base, 70%), 0px 2px 0 lighten($gray-base, 100%)
+
+#bombsweeper
+  #bombsweeper-board
+    .tile
+      border-radius: 0
+      padding: 0
+      .hint
+        padding: 0.25em
+      .fa-stack
+        margin-top: 8px
+    tr:first-child
+      td:first-child
+        .tile
+          border-top-left-radius: $border-radius-large
+      td:last-child
+        .tile
+          border-top-right-radius: $border-radius-large
+    tr:last-child
+      td:first-child
+        .tile
+          border-bottom-left-radius: $border-radius-large
+      td:last-child
+        .tile
+          border-bottom-right-radius: $border-radius-large
+  #flag, .flagged
+    cursor: move
+.tile, #flag
+  border-radius: $border-radius-large
+  margin: 0 !important
+  padding: 8px
+  height: 3em
+  width: 3em
+
+.well
+  hr
+    border-color: $btn-default-border
+
+h1 .badge, h2 .badge, h3 .badge, h4 .badge, h5 .badge, h6 .badge
+  font-size: inherit
+
+.fa.fa-bars
+  cursor: move
+
+.slider.slider-horizontal
+  width: 100%
+  margin: 1em
+
+.slider-selection
+  background: $gray
+
+.navbar .alert
+  margin: 4px
+  padding: 10px

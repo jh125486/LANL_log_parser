@@ -1,0 +1,27 @@
+- model_class = Node
+%div.page-header
+  %h1
+    = t '.title', default: model_class.model_name.human.titleize
+    "#{@node.name}"
+    .pull-right
+      = link_to node_log_lines_path(@node), class: 'btn btn-link' do
+        = fa_icon 'list-ol', text:  t('activerecord.model.log_line.other')
+      = action_btns @node
+
+%fieldset.tab
+  %ul.nav.nav-tabs{ role: 'tablist' }
+    %li.active{ role: 'presentation' }
+      = link_to 'Info', '#info', role: 'tab', data: { toggle: 'tab' }, aria: { controls: 'info'}
+    %li{ role: 'presentation'}
+      = link_to '#log-lines', role: 'tab', data: { toggle: 'tab' }, aria: { controls: 'log-lines'} do
+        = t('activerecord.model.log_line.other')
+        = bs_badge @node.log_lines.count
+
+  .tab-content
+    .tab-pane.fade.in.active#info{role: 'tabpanel'}
+      %dl
+        = label_with_value model_class.human_attribute_name(:created_at), timestamp(@node.created_at)
+        = label_with_value model_class.human_attribute_name(:updated_at), timestamp(@node.updated_at)
+
+    .tab-pane.fade#log-lines{role: 'tabpanel' }
+      = render partial: 'log_lines/log_lines_table'

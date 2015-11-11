@@ -1,0 +1,28 @@
+inherit_from: .rubocop_todo.yml
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - 'config.ru'
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'bin/*'
+
+
+Metrics/LineLength:
+  Max: 110
+
+Metrics/AbcSize:
+  Max: 25
+
+
+# XXX Add documentation
+Style/Documentation:
+  Enabled: false
+
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*
+    - app/datatables/**/*

@@ -1,0 +1,13 @@
+.form-grou1p input[type="checkbox"]
+  display: none
+  + .btn-group > label span
+    width: 20px
+    &:first-child
+      display: none
+    &:last-child
+      display: inline-block
+  &:checked + .btn-group > label span
+    &:first-child
+      display: inline-block
+    &:last-child
+      display: none

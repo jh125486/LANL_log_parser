@@ -1,0 +1,15 @@
+:ruby
+  model_class = LogLine
+  resourcenames = (0..2).collect {|i| model_class.model_name.human(count: i).downcase }
+  source = node_log_lines_path(@node, format: 'datatable')
+
+%table.table.table-striped{ data: { source: source, resourcenames: resourcenames } }
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:number)
+      %th= model_class.human_attribute_name(:message)
+      %th= model_class.human_attribute_name(:comment)
+      %th= model_class.human_attribute_name(:priority)
+      %th= model_class.human_attribute_name(:timestamp)
+      %th.actions{ data: { orderable: 'false' } }=t '.actions', default: t("helpers.actions")
+  %tbody

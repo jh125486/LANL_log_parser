@@ -1,0 +1,13 @@
+%nav.navbar.navbar-default.navbar-fixed-top
+  .navbar-header
+    %button.navbar-toggle.collapsed{ data: { target: '#app-navbar', toggle: :collapse }, type: :button }
+      %span.sr-only Toggle navigation
+      - 3.times do
+        %span.icon-bar
+    = link_to 'http://dcslab.cse.unt.edu/', class: 'navbar-brand' do
+      = image_tag 'brand.gif', alt: 'DCS Lab', height: 40
+  .collapse.navbar-collapse#app-navbar
+    %ul.nav.navbar-nav.navbar-left
+      = bs_navbar_dropdown t('activerecord.model.node', count: Node.count), dropdown_class: ('active' if current_controller?(:nodes)) do
+        - @nodes.each do |node|
+          = bs_nav_link_to node, node_path(node), active: { controller: 'nodes', id: node.id }
