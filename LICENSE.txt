@@ -1,4 +1,4 @@
-Copyright 2015 UNT UNT DCS Lab
+Copyright 2015 UNT DCS Lab
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

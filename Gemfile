@@ -58,10 +58,16 @@ group :development, :test do
 end
 gem 'guard-minitest' # integrates guard with minitest
 gem 'minitest-reporters' # integrates test view with intelliJ
+gem 'dotenv-rails' # provides environment variable loading
 
 group :development do
   gem 'web-console', '~> 2.0' # access IRB on exception page, or '= console' in views
   gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-passenger', require: false
 end
 
 group :test do
